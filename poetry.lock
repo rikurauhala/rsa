@@ -8,7 +8,6 @@ python-versions = ">=3.7.2"
 
 [package.dependencies]
 lazy-object-proxy = ">=1.4.0"
-typing-extensions = {version = ">=3.10", markers = "python_version < \"3.10\""}
 wrapt = [
     {version = ">=1.11,<2", markers = "python_version < \"3.11\""},
     {version = ">=1.14,<2", markers = "python_version >= \"3.11\""},
@@ -184,7 +183,6 @@ mccabe = ">=0.6,<0.8"
 platformdirs = ">=2.2.0"
 tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
 tomlkit = ">=0.10.1"
-typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 spelling = ["pyenchant (>=3.2,<4.0)"]
@@ -246,14 +244,6 @@ optional = false
 python-versions = ">=3.6,<4.0"
 
 [[package]]
-name = "typing-extensions"
-version = "4.3.0"
-description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
 name = "wrapt"
 version = "1.14.1"
 description = "Module for decorators, wrappers and monkey patching."
@@ -263,8 +253,8 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "8c8da15a74b4d2c69366fa4cd5530067cf23a7c36e36aeae4bd848c04f2d9f1e"
+python-versions = "^3.10"
+content-hash = "1deb9527d3eadf2ba0d29a50de9aa153d66cab1a0c633a929a15009a29d29486"
 
 [metadata.files]
 astroid = []
@@ -354,5 +344,4 @@ tomli = [
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 tomlkit = []
-typing-extensions = []
 wrapt = []

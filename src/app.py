@@ -19,15 +19,14 @@ class Application:
         while True:
             command = self._io.read("command: ")
 
-            if not command in COMMANDS:
-                self._io.print("Invalid command!")
-                self._print_commands()
-                continue
-
-            if command == "q":
-                break
-            elif command == "1":
-                self._generate_keys()
+            match command:
+                case "q":
+                    break
+                case "1":
+                    self._generate_keys()
+                case _:
+                    self._io.print("Invalid command!")
+                    self._print_commands()
 
     def _print_commands(self):
         self._io.print("Commands:")
