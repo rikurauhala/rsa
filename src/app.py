@@ -12,16 +12,20 @@ COMMANDS = {
 
 
 class Application:
+    """The main application logic."""
+
     def __init__(self):
         self._io = ConsoleIO()
         self._key_generator = KeyGenerator()
 
     def start(self):
+        """Starts the main application loop."""
+
         self._io.print("Application\n")
         self._print_commands()
 
         while True:
-            command = self._io.read("> ")
+            command = self._io.read()
             match command:
                 case "q":
                     break
@@ -40,5 +44,5 @@ class Application:
 
     def _print_commands(self):
         self._io.print("Commands:")
-        for command in COMMANDS:
-            self._io.print(COMMANDS[command])
+        for command in COMMANDS.items():
+            self._io.print(command[1])
