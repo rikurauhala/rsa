@@ -25,7 +25,7 @@ class Application:
         self._print_commands()
 
         while True:
-            command = self._io.read()
+            command = self._io.read().lower()
             match command:
                 case "q":
                     break
