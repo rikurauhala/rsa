@@ -9,4 +9,5 @@ To be written.
 |       date |  hours | description                                                          |
 | ---------: | -----: | :------------------------------------------------------------------- |
 | 2022-09-11 |      5 | creating a command-line interface, researching the topic             |
-|      total |      5 |                                                                      |
+| 2022-09-15 |      1 | researching the topic, experimenting with code                       |
+|      total |      6 |                                                                      |
