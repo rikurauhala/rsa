@@ -10,4 +10,5 @@ To be written.
 | ---------: | -----: | :------------------------------------------------------------------- |
 | 2022-09-11 |      5 | creating a command-line interface, researching the topic             |
 | 2022-09-15 |      1 | researching the topic, experimenting with code                       |
-|      total |      6 |                                                                      |
+| 2022-09-16 |      1 | researching the topic, experimenting with code                       |
+|      total |      7 |                                                                      |
