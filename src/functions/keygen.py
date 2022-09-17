@@ -6,13 +6,38 @@ class KeyGenerator:
 
     def generate_keys(self):
         """Generates keys."""
-        self._generate_public_key()
-        self._generate_private_key()
 
-    def _generate_public_key(self):
-        """Generates a public key."""
-        print("Generating public key")
+        # Large prime numbers should be used for p and q
+        p = 11
+        q = 3
 
-    def _generate_private_key(self):
-        """Generates a private key."""
-        print("Generating private key")
+        n = p*q
+        
+        lambda_n = self._lcm(p-1, q-1)
+        phi_n = (p-1) * (q-1)
+
+        # e is usually 65537
+        e = 3
+
+        # d should be calculated
+        d = 7
+
+        keys = {
+            "n": n,
+            "e": e,
+            "d": d
+        }
+
+        print(f"Public key:  [ n: {n}, e: {e} ]")
+        print(f"Private key: [ n: {n}, d: {d} ]")
+
+        return keys
+
+    def _lcm(self, a, b):
+        return ( len(str(a)) * len(str(b)) ) / self._gcd(a, b)
+
+    def _gcd(self, a, b):
+        if b == 0:
+            return a
+        else:
+            return self._gcd(b, a % b)
