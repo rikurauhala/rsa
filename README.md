@@ -12,7 +12,7 @@ This repository contains my project created for the course ["Tiralabra"](https:/
 ### Weekly reports
 
 - [Week 1](documentation/reports/week1.md)
-- [Week 2](documentation/reports/week2.md) (WIP)
+- [Week 2](documentation/reports/week2.md)
 - Week 3 (TBD)
 - Week 4 (TBD)
 - Week 5 (TBD)
