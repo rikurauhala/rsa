@@ -1,3 +1,4 @@
+from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
 
 from console_io import ConsoleIO
@@ -17,12 +18,14 @@ class Application:
     def __init__(self):
         self._io = ConsoleIO()
         self._key_generator = KeyGenerator()
+        self._crypt = Crypt()
 
     def start(self):
         """Starts the main application loop."""
 
         self._io.print("Application\n")
         self._print_commands()
+        self._keys = {}
 
         while True:
             command = self._io.read().lower()
@@ -32,13 +35,15 @@ class Application:
                 case "h":
                     self._print_commands()
                 case "1":
-                    self._key_generator.generate_keys()
+                    self._keys = self._key_generator.generate_keys()
                 case "2":
-                    self._io.print("Functionality not implemented yet!")
+                    # message to be read from input and converted to integer
+                    m = 7
+                    self._crypt.encrypt(m, self._keys["n"], self._keys["e"])
                 case "3":
-                    self._io.print("Functionality not implemented yet!")
-                case "4":
-                    self._io.print("Functionality not implemented yet!")
+                    # message to be read from input and converted to integer
+                    m = 13
+                    self._crypt.decrypt(m, self._keys["n"], self._keys["d"])
                 case _:
                     self._io.print("Invalid command!")
 
