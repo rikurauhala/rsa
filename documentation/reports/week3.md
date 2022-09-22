@@ -9,4 +9,5 @@ To be written.
 |       date |  hours | description                                                          |
 | ---------: | -----: | :------------------------------------------------------------------- |
 | 2022-09-21 |      1 | researching, experimenting with code                                 |
-|      total |      1 |                                                                      |
+| 2022-09-22 |      1 | researching, experimenting with code                                 |
+|      total |      2 |                                                                      |
