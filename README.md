@@ -5,7 +5,7 @@ This repository contains my project created for the course ["Tiralabra"](https:/
 ## Documentation
 
 - [Project specification](documentation/specification.md)
-- Implementation (TBD)
+- [Implementation](documentation/implementation.md)
 - Testing (TBD)
 - User guide (TBD)
 
