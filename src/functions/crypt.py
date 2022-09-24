@@ -3,7 +3,6 @@ class Crypt:
 
     def __init__(self):
         """Initializes a new Crypt object."""
-        pass
 
     def encrypt(self, m, e, n):
         """Encrypts a message.
