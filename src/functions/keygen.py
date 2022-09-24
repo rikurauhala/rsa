@@ -5,7 +5,7 @@ class KeyGenerator:
     """Used to generate public and private keys."""
 
     def __init__(self):
-        pass
+        """Initializes a new KeyGenerator object."""
 
     def generate_keys(self):
         """Generates keys."""
@@ -16,15 +16,11 @@ class KeyGenerator:
         q = self._get_random_prime(bit_length//2)
 
         n = p*q
-        
-        lambda_n = self._lcm(p-1, q-1)
+
         phi_n = (p-1) * (q-1)
 
-        # e is usually 65537
-        e = 3
-
-        # d should be calculated
-        d = 7
+        e = 65537
+        d = self._modinv(e, phi_n)
 
         keys = {
             "n": n,
@@ -32,14 +28,21 @@ class KeyGenerator:
             "d": d
         }
 
-        print(f"p: {p}")
-        print(f"q: {q}")
-        #print(f"Public key:  [ n: {n}, e: {e} ]")
-        #print(f"Private key: [ n: {n}, d: {d} ]")
+        print(f"Public key:  [ n: {n}, e: {e} ]")
+        print(f"Private key: [ n: {n}, d: {d} ]")
 
         return keys
 
     def _get_random_prime(self, bits):
+        """Generates a random probable prime number with desired bit length.
+
+        Args:
+            bits (int): Bit length of the prime, should be a power of two.
+
+        Returns:
+            n (int): A probable prime number.
+        """
+
         while True:
             n = random.getrandbits(bits)
             if n % 2 == 0:
@@ -50,6 +53,16 @@ class KeyGenerator:
 
 
     def _miller_rabin(self, n, k):
+        """Tests the given number n for primality using the Miller-Rabin algorithm.
+
+        Args:
+            n (int): The number to be tested.
+            k (int): The number of test rounds.
+
+        Returns:
+            boolean: Whether n is a probable prime or not.
+        """
+
         d = n-1
         s = 0
 
@@ -60,7 +73,7 @@ class KeyGenerator:
         for _ in range(k):
             a = random.randrange(2, n-2)
             x = pow(a, d, n)
-            if x == 1 or x == n-1:
+            if x in (1, n-1):
                 continue
             for _ in range(s-1):
                 x = pow(a, 2, n)
@@ -70,12 +83,15 @@ class KeyGenerator:
 
         return True
 
+    def _modinv(self, a, b):
+        _, x, _ = self._egcd(a, b)
+        return x % b
 
-    def _lcm(self, a, b):
-        return ( len(str(a)) * len(str(b)) ) / self._gcd(a, b)
+    def _egcd(self, a, b):
+        if a == 0:
+            return (b, 0, 1)
 
-    def _gcd(self, a, b):
-        if b == 0:
-            return a
-        else:
-            return self._gcd(b, a % b)
+        q = b // a
+        r = b % a
+        g, x, y = self._egcd(r, a)
+        return (g, y-q*x, x)
