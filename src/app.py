@@ -20,15 +20,14 @@ class Application:
         self._key_generator = KeyGenerator()
         self._crypt = Crypt()
         self._keys = {}
+        self._message_m = -1
+        self._message_c = -1
 
     def start(self):
         """Starts the main application loop."""
 
         self._io.print("Application\n")
         self._print_commands()
-
-        c = -1
-        m = 12345
 
         while True:
             command = self._io.read().lower()
@@ -40,13 +39,21 @@ class Application:
                 case "1":
                     self._keys = self._key_generator.generate_keys()
                 case "2":
-                    # message to be read from input and converted to integer
-                    c = self._crypt.encrypt(m, self._keys["e"], self._keys["n"])
-                    self._io.print(f"Encrypted message: {c}")
+                    self._io.print("Enter a message")
+                    self._message_m = int(self._io.read())
+                    self._message_c = self._crypt.encrypt(
+                        self._message_m,
+                        self._keys["e"],
+                        self._keys["n"]
+                    )
+                    self._io.print(f"Encrypted message: {self._message_c}")
                 case "3":
-                    # message to be read from input and converted to integer
-                    m = self._crypt.decrypt(c, self._keys["d"], self._keys["n"])
-                    self._io.print(f"Decrypted message: {m}")
+                    self._message_m = self._crypt.decrypt(
+                        self._message_c,
+                        self._keys["d"],
+                        self._keys["n"]
+                    )
+                    self._io.print(f"Decrypted message: {self._message_m}")
                 case _:
                     self._io.print("Invalid command!")
 
