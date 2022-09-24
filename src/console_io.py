@@ -1,3 +1,6 @@
+from colored import stylize, fg
+
+
 class ConsoleIO:
     """Console user input/output."""
 
@@ -18,5 +21,5 @@ class ConsoleIO:
         Returns:
             user_input: User input read from the console.
         """
-        user_input = input("> ")
+        user_input = input(stylize("> ", fg("yellow")))
         return user_input

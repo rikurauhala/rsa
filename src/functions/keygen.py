@@ -10,7 +10,7 @@ class KeyGenerator:
     def generate_keys(self):
         """Generates keys."""
 
-        bit_length = 1024
+        bit_length = 512
 
         p = self._get_random_prime(bit_length//2)
         q = self._get_random_prime(bit_length//2)

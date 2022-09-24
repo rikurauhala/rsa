@@ -39,7 +39,7 @@ class Application:
                 case "1":
                     self._keys = self._key_generator.generate_keys()
                 case "2":
-                    self._io.print("Enter a message")
+                    self._io.print("Enter a message:")
                     self._message_m = int(self._io.read())
                     self._message_c = self._crypt.encrypt(
                         self._message_m,
