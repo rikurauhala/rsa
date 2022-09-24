@@ -19,13 +19,13 @@ class Application:
         self._io = ConsoleIO()
         self._key_generator = KeyGenerator()
         self._crypt = Crypt()
+        self._keys = {}
 
     def start(self):
         """Starts the main application loop."""
 
         self._io.print("Application\n")
         self._print_commands()
-        self._keys = {}
 
         c = -1
         m = 12345
