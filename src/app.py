@@ -27,6 +27,9 @@ class Application:
         self._print_commands()
         self._keys = {}
 
+        c = -1
+        m = 12345
+
         while True:
             command = self._io.read().lower()
             match command:
@@ -38,12 +41,12 @@ class Application:
                     self._keys = self._key_generator.generate_keys()
                 case "2":
                     # message to be read from input and converted to integer
-                    m = 7
-                    self._crypt.encrypt(m, self._keys["n"], self._keys["e"])
+                    c = self._crypt.encrypt(m, self._keys["e"], self._keys["n"])
+                    self._io.print(f"Encrypted message: {c}")
                 case "3":
                     # message to be read from input and converted to integer
-                    m = 13
-                    self._crypt.decrypt(m, self._keys["n"], self._keys["d"])
+                    m = self._crypt.decrypt(c, self._keys["d"], self._keys["n"])
+                    self._io.print(f"Decrypted message: {m}")
                 case _:
                     self._io.print("Invalid command!")
 
