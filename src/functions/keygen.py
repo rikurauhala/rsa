@@ -17,7 +17,7 @@ class KeyGenerator:
 
         n = p*q
 
-        phi_n = (p-1) * (q-1)
+        phi_n = (p-1)*(q-1)
 
         e = 65537
         d = self._modinv(e, phi_n)
@@ -50,7 +50,6 @@ class KeyGenerator:
             n_is_prime = self._miller_rabin(n, 10)
             if n_is_prime:
                 return n
-
 
     def _miller_rabin(self, n, k):
         """Tests the given number n for primality using the Miller-Rabin algorithm.
