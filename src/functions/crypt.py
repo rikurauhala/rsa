@@ -76,17 +76,13 @@ class Crypt:
                 message_int = "00" + message_int
 
         message_str = ""
-
-        start = 0
-        end = 3
+        start, end = 0, 3
 
         while end <= len(message_int)+1:
             ascii_decimal = message_int[start:end]
-            first_number = ascii_decimal[0]
-            second_number = ascii_decimal[1]
-            if first_number == 0:
+            if ascii_decimal[0] == 0:
                 ascii_decimal = ascii_decimal[-2:]
-            elif first_number == 0 and second_number == 0:
+            elif ascii_decimal[0] == 0 and ascii_decimal[1] == 0:
                 ascii_decimal = ascii_decimal[-1]
             ascii_decimal = int(ascii_decimal)
             ascii_symbol = chr(ascii_decimal)
