@@ -48,6 +48,11 @@ class Crypt:
 
         m = ""
         for char in message:
+            numbers = len(str(ord(char)))
+            if numbers == 1:
+                m += "00"
+            elif numbers == 2:
+                m += "0"
             m += str(ord(char))
         return int(m)
 
@@ -60,6 +65,7 @@ class Crypt:
         Returns:
             message_str (string): Decrypted message as a string.
         """
+
         message_int = str(message)
         message_str = ""
 
@@ -67,7 +73,14 @@ class Crypt:
         end = 3
 
         while end <= len(message_int)+1:
-            ascii_decimal = int(message_int[start:end])
+            ascii_decimal = message_int[start:end]
+            first_number = ascii_decimal[0]
+            second_number = ascii_decimal[1]
+            if first_number == 0:
+                ascii_decimal = ascii_decimal[-2:]
+            elif first_number == 0 and second_number == 0:
+                ascii_decimal = ascii_decimal[-1]
+            ascii_decimal = int(ascii_decimal)
             ascii_symbol = chr(ascii_decimal)
             message_str += ascii_symbol
             start += 3
