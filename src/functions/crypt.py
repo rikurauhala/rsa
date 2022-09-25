@@ -16,6 +16,7 @@ class Crypt:
             c (int): Ciphertext message i.e. the encrypted message.
         """
 
+        m = self._convert_to_int(m)
         c = pow(m, e, n)
         return c
 
@@ -32,4 +33,44 @@ class Crypt:
         """
 
         m = pow(c, d, n)
+        m = self._convert_to_string(m)
         return m
+
+    def _convert_to_int(self, message):
+        """Converts a string into a integer.
+
+        Args:
+            message (string): Message to be converted.
+
+        Returns:
+            m (int): Encrypted message as an integer.
+        """
+
+        m = ""
+        for char in message:
+            m += str(ord(char))
+        return int(m)
+
+    def _convert_to_string(self, message):
+        """Converts an integer into a string.
+
+        Args:
+            message (string): Integer to be converted.
+
+        Returns:
+            message_str (string): Decrypted message as a string.
+        """
+        message_int = str(message)
+        message_str = ""
+
+        start = 0
+        end = 3
+
+        while end <= len(message_int)+1:
+            ascii_decimal = int(message_int[start:end])
+            ascii_symbol = chr(ascii_decimal)
+            message_str += ascii_symbol
+            start += 3
+            end += 3
+
+        return message_str
