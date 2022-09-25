@@ -4,6 +4,7 @@ To be written.
 
 ## Sources
 
+- [ASCII Code](https://www.ascii-code.com/) (n.d.) | ascii-code.com
 - [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) (n.d.) | wikipedia.org
 - [Extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) (n.d.) | wikipedia.org
 - [Miller–Rabin primality test](https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test) (n.d.) | rosettacode.org
