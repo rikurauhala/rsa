@@ -37,7 +37,9 @@ class Application:
                 case "h":
                     self._print_commands()
                 case "1":
+                    self._io.print("Generating keys...")
                     self._keys = self._key_generator.generate_keys()
+                    self._io.print("Keys generated!")
                 case "2":
                     self._io.print("Enter a message:")
                     self._message_m = self._io.read()

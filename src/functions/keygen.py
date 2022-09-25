@@ -8,7 +8,11 @@ class KeyGenerator:
         """Initializes a new KeyGenerator object."""
 
     def generate_keys(self):
-        """Generates keys."""
+        """Generates keys.
+
+        Returns:
+            keys (dictionary): {Key: string, value: integer} | Values of n, e and d
+        """
 
         bit_length = 512
 
@@ -28,19 +32,16 @@ class KeyGenerator:
             "d": d
         }
 
-        print(f"Public key:  [ n: {n}, e: {e} ]")
-        print(f"Private key: [ n: {n}, d: {d} ]")
-
         return keys
 
     def _get_random_prime(self, bits):
         """Generates a random probable prime number with desired bit length.
 
         Args:
-            bits (int): Bit length of the prime, should be a power of two.
+            bits (integer): Bit length of the prime, should be a power of two.
 
         Returns:
-            n (int): A probable prime number.
+            n (integer): A probable prime number.
         """
 
         while True:
@@ -55,8 +56,8 @@ class KeyGenerator:
         """Tests the given number n for primality using the Miller-Rabin algorithm.
 
         Args:
-            n (int): The number to be tested.
-            k (int): The number of test rounds.
+            n (integer): The number to be tested.
+            k (integer): The number of test rounds.
 
         Returns:
             boolean: Whether n is a probable prime or not.

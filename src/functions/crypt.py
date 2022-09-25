@@ -8,12 +8,12 @@ class Crypt:
         """Encrypts a message.
 
         Args:
-            m (int): Plaintext message to be encrypted.
-            e (int): Public key encryption exponent.
-            n (int): Public key modulus.
+            m (integer): Plaintext message to be encrypted.
+            e (integer): Public key encryption exponent.
+            n (integer): Public key modulus.
 
         Returns:
-            c (int): Ciphertext message i.e. the encrypted message.
+            c (integer): Ciphertext message i.e. the encrypted message.
         """
 
         m = self._convert_to_int(m)
@@ -24,12 +24,12 @@ class Crypt:
         """Decrypts a message.
 
         Args:
-            c (int): Ciphertext message to be decrypted.
-            d (int): Private key decryption exponent.
-            n (int): Private key modulus.
+            c (integer): Ciphertext message to be decrypted.
+            d (integer): Private key decryption exponent.
+            n (integer): Private key modulus.
 
         Returns:
-            m (int): Plaintext message, i.e. the decrypted original message.
+            m (integer): Plaintext message, i.e. the decrypted original message.
         """
 
         m = pow(c, d, n)
@@ -43,7 +43,7 @@ class Crypt:
             message (string): Message to be converted.
 
         Returns:
-            m (int): Encrypted message as an integer.
+            m (integer): Encrypted message as an integer.
         """
 
         m = ""
@@ -67,6 +67,14 @@ class Crypt:
         """
 
         message_int = str(message)
+        message_length = len(message_int)
+
+        if message_length % 3 != 0:
+            if message_length % 2 == 0:
+                message_int = "0" + message_int
+            else:
+                message_int = "00" + message_int
+
         message_str = ""
 
         start = 0
