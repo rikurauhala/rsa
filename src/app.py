@@ -8,7 +8,9 @@ COMMANDS = {
     "h": "[ h ] print the command list",
     "1": "[ 1 ] generate keys",
     "2": "[ 2 ] encrypt message",
-    "3": "[ 3 ] decrypt message"
+    "3": "[ 3 ] decrypt message",
+    "4": "[ 4 ] show public key",
+    "5": "[ 5 ] show private key"
 }
 
 
@@ -57,6 +59,10 @@ class Application:
                         self._keys["n"]
                     )
                     self._io.print(f"Decrypted message: {self._message_m}")
+                case "4":
+                    self._io.print("Not implemented yet!")
+                case "5":
+                    self._io.print("Not implemented yet!")
                 case _:
                     self._io.print("Invalid command!")
 
