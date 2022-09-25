@@ -8,5 +8,5 @@ To be written at the end of the week.
 
 |       date |  hours | description                                                          |
 | ---------: | -----: | :------------------------------------------------------------------- |
-| 2022-09-25 |      2 | adding support for an ASCII based integer/string conversion          |
-|      total |      2 |                                                                      |
+| 2022-09-25 |      3 | adding support for an ASCII based integer/string conversion          |
+|      total |      3 |                                                                      |
