@@ -4,11 +4,11 @@ from functions.keygen import KeyGenerator
 from console_io import ConsoleIO
 
 COMMANDS = {
-    "q": "q - quit",
-    "h": "h - print the command list",
-    "1": "1 - generate keys",
-    "2": "2 - encrypt message",
-    "3": "3 - decrypt message"
+    "q": "[ q ] quit",
+    "h": "[ h ] print the command list",
+    "1": "[ 1 ] generate keys",
+    "2": "[ 2 ] encrypt message",
+    "3": "[ 3 ] decrypt message"
 }
 
 
@@ -16,6 +16,7 @@ class Application:
     """The main application logic."""
 
     def __init__(self):
+        """Initializes a new instance of the application."""
         self._io = ConsoleIO()
         self._key_generator = KeyGenerator()
         self._crypt = Crypt()
@@ -60,6 +61,7 @@ class Application:
                     self._io.print("Invalid command!")
 
     def _print_commands(self):
+        """Prints a list of available commands."""
         self._io.print("Commands:")
         for command in COMMANDS.items():
             self._io.print(command[1])
