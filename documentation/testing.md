@@ -31,4 +31,4 @@ $ firefox htmlcov/index.html
 
 ## Known issues
 
-Decryption does not currently work as intended. The way the conversion works is not exactly very clever. It also doesn't work for long strings.
+- Strong messages aren't supported yet
