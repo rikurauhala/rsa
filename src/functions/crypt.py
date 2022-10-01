@@ -48,12 +48,7 @@ class Crypt:
 
         m = ""
         for char in message:
-            numbers = len(str(ord(char)))
-            if numbers == 1:
-                m += "00"
-            elif numbers == 2:
-                m += "0"
-            m += str(ord(char))
+            m += str(ord(char)+100)
         return int(m)
 
     def _convert_to_string(self, message):
@@ -67,24 +62,12 @@ class Crypt:
         """
 
         message_int = str(message)
-        message_length = len(message_int)
-
-        if message_length % 3 != 0:
-            if message_length % 2 == 0:
-                message_int = "0" + message_int
-            else:
-                message_int = "00" + message_int
 
         message_str = ""
         start, end = 0, 3
 
         while end <= len(message_int)+1:
-            ascii_decimal = message_int[start:end]
-            if ascii_decimal[0] == 0:
-                ascii_decimal = ascii_decimal[-2:]
-            elif ascii_decimal[0] == 0 and ascii_decimal[1] == 0:
-                ascii_decimal = ascii_decimal[-1]
-            ascii_decimal = int(ascii_decimal)
+            ascii_decimal = int(message_int[start:end])-100
             ascii_symbol = chr(ascii_decimal)
             message_str += ascii_symbol
             start += 3
