@@ -24,3 +24,7 @@ $ poetry run invoke coverage-report
 # with a web browser, for example Mozilla Firefox
 $ firefox htmlcov/index.html
 ```
+
+### Coverage report
+
+![Coverage report](/documentation/images/coverage-report.png)
