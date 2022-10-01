@@ -31,4 +31,4 @@ $ firefox htmlcov/index.html
 
 ## Known issues
 
-- Strong messages aren't supported yet
+- Long messages aren't supported yet
