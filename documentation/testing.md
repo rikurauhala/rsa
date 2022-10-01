@@ -28,3 +28,7 @@ $ firefox htmlcov/index.html
 ### Coverage report
 
 ![Coverage report](/documentation/images/coverage-report.png)
+
+## Known issues
+
+Decryption does not currently work as intended. The way the conversion works is not exactly very clever. It also doesn't work for long strings.
