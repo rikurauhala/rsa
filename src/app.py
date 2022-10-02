@@ -60,9 +60,17 @@ class Application:
                     )
                     self._io.print(f"Decrypted message: {self._message_m}")
                 case "4":
-                    self._io.print("Not implemented yet!")
+                    self._io.print("Public key")
+                    n = self._keys["n"]
+                    self._io.print(f"n: {n}")
+                    e = self._keys["e"]
+                    self._io.print(f"e: {e}")
                 case "5":
-                    self._io.print("Not implemented yet!")
+                    self._io.print("Private key")
+                    n = self._keys["n"]
+                    self._io.print(f"n: {n}")
+                    d = self._keys["d"]
+                    self._io.print(f"d: {d}")
                 case _:
                     self._io.print("Invalid command!")
 
