@@ -1,5 +1,4 @@
 from os import name, system
-from re import S
 
 from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
