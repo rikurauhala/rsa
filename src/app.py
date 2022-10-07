@@ -1,4 +1,5 @@
 from os import name, system
+from re import S
 
 from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
@@ -31,7 +32,8 @@ class Application:
     def start(self):
         """Starts the main application loop."""
 
-        self._io.print("Application\n")
+        self._clear_console()
+        self._print_title("RSA")
         self._print_commands()
 
         while True:
@@ -68,22 +70,36 @@ class Application:
         else:
             system("clear")
 
+    def _print_title(self, text):
+        """Prints a title.
+
+        Args:
+            text (string): Text to be printed.
+        """
+        self._io.print(text + "\n")
+
     def _generate_keys(self):
+        """Generates keys."""
+        self._print_title("Key generation")
         self._io.print("Generating keys...")
         self._keys = self._key_generator.generate_keys()
         self._io.print("Keys generated!")
 
     def _encrypt(self):
+        """Encrypts a message."""
+        self._print_title("Message encryption")
         self._io.print("Enter a message:")
         self._message_m = self._io.read()
         self._message_c = self._crypt.encrypt(
             self._message_m,
-               self._keys["e"],
+            self._keys["e"],
             self._keys["n"]
         )
         self._io.print(f"Encrypted message: {self._message_c}")
 
     def _decrypt(self):
+        """Decrypts a message."""
+        self._print_title("Message decryption")
         self._message_m = self._crypt.decrypt(
             self._message_c,
             self._keys["d"],
@@ -92,14 +108,14 @@ class Application:
         self._io.print(f"Decrypted message: {self._message_m}")
 
     def _print_public_key(self):
-        self._io.print("Public key")
+        self._print_title("Public key")
         n = self._keys["n"]
         self._io.print(f"n: {n}")
         e = self._keys["e"]
         self._io.print(f"e: {e}")
 
     def _print_private_key(self):
-        self._io.print("Private key")
+        self._print_title("Private key")
         n = self._keys["n"]
         self._io.print(f"n: {n}")
         d = self._keys["d"]
