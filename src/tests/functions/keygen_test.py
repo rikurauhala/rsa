@@ -7,6 +7,9 @@ class TestKeyGenerator(unittest.TestCase):
     def setUp(self):
         self._key_generator = KeyGenerator()
         self._keys = self._key_generator.generate_keys()
+        self._n = self._keys["n"]
+        self._e = self._keys["e"]
+        self._d = self._keys["d"]
 
     def test_key_generator_returns_a_dictionary(self):
         type_of_keys = type(self._keys)
@@ -17,14 +20,16 @@ class TestKeyGenerator(unittest.TestCase):
         self.assertEqual(items_in_keys, 3)
 
     def test_key_dictionary_contains_correct_items(self):
-        n = self._keys["n"]
-        type_of_n = type(n)
+        type_of_n = type(self._n)
         self.assertEqual(type_of_n, int)
 
-        e = self._keys["e"]
-        type_of_e = type(e)
+        type_of_e = type(self._e)
         self.assertEqual(type_of_e, int)
 
-        d = self._keys["d"]
-        type_of_d = type(d)
+        type_of_d = type(self._d)
         self.assertEqual(type_of_d, int)
+
+    def test_key_length_is_correct(self):
+        actual_length = self._n.bit_length()
+        expected_length = 1024
+        self.assertEqual(actual_length, expected_length)
