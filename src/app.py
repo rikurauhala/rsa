@@ -1,3 +1,5 @@
+from os import name, system
+
 from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
 
@@ -34,6 +36,7 @@ class Application:
 
         while True:
             command = self._io.read().lower()
+            self._clear_console()
             match command:
                 case "q":
                     break
@@ -79,3 +82,10 @@ class Application:
         self._io.print("Commands:")
         for command in COMMANDS.items():
             self._io.print(command[1])
+
+    def _clear_console(self):
+        """Clears the console after each command."""
+        if name == "nt":
+            system("cls")
+        else:
+            system("clear")
