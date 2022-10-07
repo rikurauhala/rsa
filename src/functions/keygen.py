@@ -1,4 +1,5 @@
 import random
+import secrets
 
 
 class KeyGenerator:
@@ -14,7 +15,7 @@ class KeyGenerator:
             keys (dictionary): {Key: string, value: integer} | Values of n, e and d
         """
 
-        bit_length = 512
+        bit_length = 1024
 
         p = self._get_random_prime(bit_length//2)
         q = self._get_random_prime(bit_length//2)
@@ -45,7 +46,7 @@ class KeyGenerator:
         """
 
         while True:
-            n = random.getrandbits(bits)
+            n = secrets.randbits(bits)
             if n % 2 == 0:
                 n += 1
             n_is_prime = self._miller_rabin(n, 10)
