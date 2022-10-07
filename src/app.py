@@ -43,39 +43,17 @@ class Application:
                 case "h":
                     self._print_commands()
                 case "1":
-                    self._io.print("Generating keys...")
-                    self._keys = self._key_generator.generate_keys()
-                    self._io.print("Keys generated!")
+                    self._generate_keys()
                 case "2":
-                    self._io.print("Enter a message:")
-                    self._message_m = self._io.read()
-                    self._message_c = self._crypt.encrypt(
-                        self._message_m,
-                        self._keys["e"],
-                        self._keys["n"]
-                    )
-                    self._io.print(f"Encrypted message: {self._message_c}")
+                    self._encrypt()
                 case "3":
-                    self._message_m = self._crypt.decrypt(
-                        self._message_c,
-                        self._keys["d"],
-                        self._keys["n"]
-                    )
-                    self._io.print(f"Decrypted message: {self._message_m}")
+                    self._decrypt()
                 case "4":
-                    self._io.print("Public key")
-                    n = self._keys["n"]
-                    self._io.print(f"n: {n}")
-                    e = self._keys["e"]
-                    self._io.print(f"e: {e}")
+                    self._print_public_key()
                 case "5":
-                    self._io.print("Private key")
-                    n = self._keys["n"]
-                    self._io.print(f"n: {n}")
-                    d = self._keys["d"]
-                    self._io.print(f"d: {d}")
+                    self._print_private_key()
                 case _:
-                    self._io.print("Invalid command!")
+                    self._print_invalid_command()
 
     def _print_commands(self):
         """Prints a list of available commands."""
@@ -89,3 +67,43 @@ class Application:
             system("cls")
         else:
             system("clear")
+
+    def _generate_keys(self):
+        self._io.print("Generating keys...")
+        self._keys = self._key_generator.generate_keys()
+        self._io.print("Keys generated!")
+
+    def _encrypt(self):
+        self._io.print("Enter a message:")
+        self._message_m = self._io.read()
+        self._message_c = self._crypt.encrypt(
+            self._message_m,
+               self._keys["e"],
+            self._keys["n"]
+        )
+        self._io.print(f"Encrypted message: {self._message_c}")
+
+    def _decrypt(self):
+        self._message_m = self._crypt.decrypt(
+            self._message_c,
+            self._keys["d"],
+            self._keys["n"]
+        )
+        self._io.print(f"Decrypted message: {self._message_m}")
+
+    def _print_public_key(self):
+        self._io.print("Public key")
+        n = self._keys["n"]
+        self._io.print(f"n: {n}")
+        e = self._keys["e"]
+        self._io.print(f"e: {e}")
+
+    def _print_private_key(self):
+        self._io.print("Private key")
+        n = self._keys["n"]
+        self._io.print(f"n: {n}")
+        d = self._keys["d"]
+        self._io.print(f"d: {d}")
+
+    def _print_invalid_command(self):
+        self._io.print("Invalid command!")

@@ -5,7 +5,7 @@ class ConsoleIO:
     """Console user input/output."""
 
     def __init__(self):
-        pass
+        """Initializes a new ConsoleIO object."""
 
     def print(self, string):
         """Prints the given string to the console.
