@@ -17,9 +17,7 @@ See the user guide to get started.
 - [Week 2](documentation/reports/week2.md)
 - [Week 3](documentation/reports/week3.md)
 - [Week 4](documentation/reports/week4.md)
-<!--
-- [Week 5](documentation/reports/week5.md)
--->
+- [Week 5](documentation/reports/week5.md) (WIP)
 <!--
 - [Week 6](documentation/reports/week6.md)
 -->
