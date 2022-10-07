@@ -9,4 +9,5 @@ To be written at the end of the week.
 |       date |  hours | description                                                          |
 | ---------: | -----: | :------------------------------------------------------------------- |
 | 2022-10-02 |      1 | making minor improvements                                            |
-|      total |      1 |                                                                      |
+| 2022-10-07 |      3 | improving the program based on the peer review                       |
+|      total |      4 |                                                                      |
