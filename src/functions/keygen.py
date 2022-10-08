@@ -107,6 +107,15 @@ class KeyGenerator:
         return True
 
     def _modinv(self, a, b):
+        """Calculates the modular inverse.
+
+        Args:
+            a (integer)
+            b (integer)
+
+        Returns:
+            integer
+        """
         s = self._egcd(a, b)
         return s % b
 

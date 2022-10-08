@@ -16,7 +16,7 @@ class TestCrypt(unittest.TestCase):
     def test_encryption_returns_integer(self):
         type_of_message_c = type(self._message_c)
         self.assertEqual(type_of_message_c, int)
-    
+
     def test_decryption_returns_string(self):
         type_of_message = type(self._message_p)
         self.assertEqual(type_of_message, str)
