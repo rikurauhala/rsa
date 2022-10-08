@@ -1,3 +1,4 @@
+import math
 import random
 import secrets
 
@@ -35,6 +36,27 @@ class KeyGenerator:
 
         return keys
 
+    def _get_random_integer(self, bits):
+        """Generates a random integer with desired bit length.
+
+        A secure random number generator is used by utilizing the secrets module.
+        A random integer is generated from a range of 1.5 * 2^(bits-1) to 2^bits.
+        For example if the desired bit length is 1024, the range would go from
+        1.5 * 2^1023 to 2^1024. This way the generated integer will (almost) always
+        have the desired bit length.
+
+        Args:
+            bits (integer): Bit length of the number, should be a power of two.
+
+        Returns:
+            random_integer (integer): A random integer.
+        """
+        secure_rng = secrets.SystemRandom()
+        start = math.floor(1.5*2**(bits-1))
+        stop = 2**bits
+        random_integer = secure_rng.randrange(start, stop)
+        return random_integer
+
     def _get_random_prime(self, bits):
         """Generates a random probable prime number with desired bit length.
 
@@ -46,7 +68,7 @@ class KeyGenerator:
         """
 
         while True:
-            n = secrets.randbits(bits)
+            n = self._get_random_integer(bits)
             if n % 2 == 0:
                 n += 1
             n_is_prime = self._miller_rabin(n, 10)
