@@ -2,6 +2,12 @@
 
 ## Overview
 
+The program implements a simple version of the [RSA cryptosystem](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) in Python. The application has a command-line interface. It offers functionality for generating (both public and private) keys and using them to encrypt and decrypt messages.
+
+[Poetry](https://python-poetry.org/) is used for managing dependencies and the commands for various *tasks* are handled by [Invoke](https://www.pyinvoke.org/).
+
+## Algorithm
+
 To be written.
 
 ## Testing
