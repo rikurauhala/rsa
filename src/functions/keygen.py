@@ -107,14 +107,27 @@ class KeyGenerator:
         return True
 
     def _modinv(self, a, b):
-        _, x, _ = self._egcd(a, b)
+        x = self._egcd(a, b)
         return x % b
 
     def _egcd(self, a, b):
-        if a == 0:
-            return (b, 0, 1)
+        """Implements the extended Euclidean algorithm.
 
-        q = b // a
-        r = b % a
-        g, x, y = self._egcd(r, a)
-        return (g, y-q*x, x)
+        Args:
+            a (_type_): _description_
+            b (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
+        x, y = 0, 1
+        u, v = 1, 0
+        while a != 0:
+            q = b // a
+            r = b % a
+            m = x - u * q
+            n = y - v * q
+            b, a = a, r
+            x, y = u, v
+            u, v = m, n
+        return x
