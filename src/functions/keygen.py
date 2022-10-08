@@ -107,27 +107,44 @@ class KeyGenerator:
         return True
 
     def _modinv(self, a, b):
-        x = self._egcd(a, b)
-        return x % b
+        s = self._egcd(a, b)
+        return s % b
+
+    def _divide(self, a, b):
+        """Divides two integers, returns the quotient and the remainder.
+
+        Performs Euclidean division.
+
+        Args:
+            a (integer): Divident.
+            b (integer): Divisor.
+
+        Returns:
+            quotient, remainder (tuple)
+        """
+        quotient = b // a
+        remainder = b % a
+        return (quotient, remainder)
 
     def _egcd(self, a, b):
         """Implements the extended Euclidean algorithm.
 
+        Only the value s is returned as only that value is needed by the program.
+
         Args:
-            a (_type_): _description_
-            b (_type_): _description_
+            a (integer)
+            b (integer)
 
         Returns:
-            _type_: _description_
+            s (integer)
         """
-        x, y = 0, 1
-        u, v = 1, 0
+        s, old_s = 0, 1
+        t, old_t = 1, 0
         while a != 0:
-            q = b // a
-            r = b % a
-            m = x - u * q
-            n = y - v * q
-            b, a = a, r
-            x, y = u, v
-            u, v = m, n
-        return x
+            quotient, remainder = self._divide(a, b)
+            m = s - t * quotient
+            n = old_s - old_t * quotient
+            b, a = a, remainder
+            s, old_s = t, old_t
+            t, old_t = m, n
+        return s
