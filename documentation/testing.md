@@ -31,4 +31,4 @@ $ firefox htmlcov/index.html
 
 ## Known issues
 
-- Long messages aren't supported yet
+See [Issues](https://github.com/rikurauhala/rsa/issues) for an up-to-date list.
