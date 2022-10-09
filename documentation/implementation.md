@@ -10,9 +10,13 @@ The program implements a simple version of the [RSA cryptosystem](https://en.wik
 
 To be written.
 
-## Testing
+## Time and space complexities
 
 To be written.
+
+## Testing
+
+See the [testing document](testing.md) for more details.
 
 ## Project structure
 
@@ -53,6 +57,11 @@ As the project is managed by Poetry, the directory contains the configuration fi
 │       │   ├── __init__.py
 │       │   ├── keygen_test.py
 │       ├── __init__.py
+├── .coverage
+├── .coveragerc
+├── .gitignore
+├── .pylintrc
+├── .python-version
 ├── tasks.py
 
 ```
