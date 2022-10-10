@@ -1,8 +1,12 @@
+from utils.characters import CharacterMap
+
+
 class Crypt:
     """Used to encrypt and decrypt messages."""
 
     def __init__(self):
         """Initializes a new Crypt object."""
+        self._character_map = CharacterMap()
 
     def encrypt(self, m, e, n):
         """Encrypts a message.
@@ -48,7 +52,7 @@ class Crypt:
 
         m = ""
         for char in message:
-            m += str(ord(char)+100)
+            m += str(self._character_map.get_ord(char))
         return int(m)
 
     def _convert_to_string(self, message):
@@ -64,13 +68,13 @@ class Crypt:
         message_int = str(message)
 
         message_str = ""
-        start, end = 0, 3
+        start, end = 0, 2
 
         while end <= len(message_int)+1:
-            ascii_decimal = int(message_int[start:end])-100
-            ascii_symbol = chr(ascii_decimal)
-            message_str += ascii_symbol
-            start += 3
-            end += 3
+            decimal = int(message_int[start:end])
+            symbol = self._character_map.get_chr(decimal)
+            message_str += symbol
+            start += 2
+            end += 2
 
         return message_str
