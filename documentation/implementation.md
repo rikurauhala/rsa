@@ -64,6 +64,10 @@ A message can be decrypted with the following procedure.
 
 <!-- Add a more detailed description -->
 
+#### CharacterMap
+
+To be written.
+
 ## Time and space complexities
 
 To be written.
