@@ -9,4 +9,5 @@ To be written.
 |       date |  hours | description                                                          |
 | ---------: | -----: | :------------------------------------------------------------------- |
 | 2022-10-09 |      1 | making minor improvements, writing documentation                     |
-|      total |      1 |                                                                      |
+| 2022-10-10 |      2 | writing documentation, working on a custom character map structure   |
+|      total |      3 |                                                                      |
