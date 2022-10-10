@@ -6,7 +6,45 @@ The program implements a simple version of the [RSA cryptosystem](https://en.wik
 
 [Poetry](https://python-poetry.org/) is used for managing dependencies and the commands for various *tasks* are handled by [Invoke](https://www.pyinvoke.org/).
 
-## Algorithm
+## Data structures and algorithms
+
+Multiple different algorithms are implemented. Together they form a working program.
+
+### Key generation
+
+The following algorithm is used to generate the public and the private key.
+
+1. Choose a desired *key length*.
+    - Should be a power of two, usually $2^{10} = 1024$, $2^{11} = 2048$ or $2^{12} = 4096$.
+    - Greater key length permits longer messages and offers stronger encryption but key generation will take longer.
+2. Choose two *distinct* prime numbers, $p$ and $q$.
+    - These values are to be kept secret and disposed of after key generation.
+    - The *bit length* of each should be half the key length chosen in step 1.
+    - Large prime numbers can be found efficiently using the *Miller-Rabin* test.
+3. Calculate $n = pq$.
+    - $n$ is the *modulus*, used for both keys. It will be made public.
+    - The bit length of $n$ should match the key length chosen in step 1.
+4. Calculate $\phi(n) = (p-1)(q-1)$.
+    - The value will be kept secret and forgotten after key generation.
+5. Choose an integer $e$, so that $e$ and $\phi$ are *coprime* and $1 < e < \phi$.
+    - Usually $2^{16} = 65537$ is a good choice and my implementation also uses this value.
+6. Calculate $d$.
+    - $d$ can be calculated using the *extended Euclidean algorithm*.
+    - $d$ is the exponent part of the *secret key* and should **not** be published anywhere.
+
+To summarize:
+- The public key is made of the modulus $n$ and the *encryption exponent* $e$.
+- The private key consists of $n$ and the *decryption exponent* $d$.
+
+#### Primality test
+
+To be written.
+
+#### Encryption
+
+To be written.
+
+#### Decryption
 
 To be written.
 
@@ -33,7 +71,7 @@ As the project is managed by Poetry, the directory contains the configuration fi
 │   ├── reports
 │   │   ├── week1.md
 │   │   ├── ...
-│   │   └── week5.md
+│   │   └── week6.md
 │   ├── specification.md
 │   └── testing.md
 ├── htmlcov
@@ -71,6 +109,7 @@ As the project is managed by Poetry, the directory contains the configuration fi
 The following sources have been used in the development process.
 
 - [ASCII Code](https://www.ascii-code.com/) (n.d.) | ascii-code.com
+- [Coprime integers](https://en.wikipedia.org/wiki/Coprime_integers) (n.d.) | wikipedia.org
 - [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) (n.d.) | wikipedia.org
 - [Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division) (n.d.) | wikipedia.org
 - [Extended Euclidean algorithm](https://brilliant.org/wiki/extended-euclidean-algorithm/) (n.d.) | brilliant.org
