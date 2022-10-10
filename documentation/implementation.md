@@ -12,7 +12,7 @@ Multiple different algorithms are implemented. Together they form a working prog
 
 ### Key generation
 
-The following algorithm is used to generate the public and the private key.
+The following algorithm is used to generate the public and the private key. All functionality is implemented in the file `src/functions/keygen.py`.
 
 1. Choose a desired *key length*.
     - Should be a power of two, usually $2^{10} = 1024$, $2^{11} = 2048$ or $2^{12} = 4096$.
@@ -40,13 +40,29 @@ To summarize:
 
 To be written.
 
-#### Encryption
+### Encryption and decryption
 
-To be written.
+All functionality is implemented in the file `src/functions/crypt.py`.
 
-#### Decryption
+#### Encrypting a message
 
-To be written.
+A message can be encrypted with the following procedure.
+
+1. Enter a plaintext message.
+2. Convert the message into an integer.
+3. Encrypt the message.
+
+<!-- Add a more detailed description -->
+
+#### Decrypting a message
+
+A message can be decrypted with the following procedure.
+
+1. Enter the decrypted message.
+2. Decrypt the message.
+3. Convert the decrypted message into a string.
+
+<!-- Add a more detailed description -->
 
 ## Time and space complexities
 
