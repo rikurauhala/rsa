@@ -14,6 +14,16 @@ class ConsoleIO:
             string: String to be printed.
         """
         print(string)
+    
+    def print_error(self, message):
+        """Prints a red error message to the console.
+
+        Args:
+            message: Error message to be printed.
+        """
+        style = fg("9")
+        error_message = stylize(f"Error: {message}", style)
+        print(error_message)
 
     def read(self):
         """Reads user input.

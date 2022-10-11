@@ -80,14 +80,19 @@ class Application:
     def _encrypt(self):
         """Encrypts a message."""
         self._print_title("Message encryption")
-        self._io.print("Enter a message:")
-        self._message_m = self._io.read()
-        self._message_c = self._crypt.encrypt(
-            self._message_m,
-            self._keys["e"],
-            self._keys["n"]
-        )
-        self._io.print(f"Encrypted message: {self._message_c}")
+        while True:
+            try:
+                self._io.print("Enter a message:")
+                self._message_m = self._io.read()
+                self._message_c = self._crypt.encrypt(
+                    self._message_m,
+                    self._keys["e"],
+                    self._keys["n"]
+                )
+                self._io.print(f"Encrypted message: {self._message_c}")
+                break
+            except KeyError as error:
+                self._io.print_error(error)
 
     def _decrypt(self):
         """Decrypts a message."""
@@ -114,4 +119,4 @@ class Application:
         self._io.print(f"d: {d}")
 
     def _print_invalid_command(self):
-        self._io.print("Invalid command!")
+        self._io.print_error("Invalid command!")
