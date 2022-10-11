@@ -21,6 +21,7 @@ class Crypt:
         """
 
         m = self._convert_to_int(m)
+        print(m.bit_length())
         c = pow(m, e, n)
         return c
 

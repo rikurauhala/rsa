@@ -14,7 +14,7 @@ class ConsoleIO:
             string: String to be printed.
         """
         print(string)
-    
+
     def print_error(self, message):
         """Prints a red error message to the console.
 

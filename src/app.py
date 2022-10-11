@@ -96,13 +96,16 @@ class Application:
 
     def _decrypt(self):
         """Decrypts a message."""
-        self._print_title("Message decryption")
-        self._message_m = self._crypt.decrypt(
-            self._message_c,
-            self._keys["d"],
-            self._keys["n"]
-        )
-        self._io.print(f"Decrypted message: {self._message_m}")
+        try:
+            self._print_title("Message decryption")
+            self._message_m = self._crypt.decrypt(
+                self._message_c,
+                self._keys["d"],
+                self._keys["n"]
+            )
+            self._io.print(f"Decrypted message: {self._message_m}")
+        except KeyError as error:
+            self._io.print_error(error)
 
     def _print_public_key(self):
         self._print_title("Public key")

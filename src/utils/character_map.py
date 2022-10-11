@@ -26,9 +26,10 @@ class CharacterMap:
         Returns:
             char (character): A character.
         """
+
         if order < 10 or order > 99:
             raise KeyError("Order number must be between 10 and 99")
-        if type(order) is not int:
+        if not isinstance(order, int):
             raise TypeError("Order number must be an integer")
         char = self._characters[order]
         return char
@@ -45,6 +46,7 @@ class CharacterMap:
         Returns:
             order (integer): An integer with a value between 10 and 99.
         """
+
         if char not in self._order:
             raise KeyError(f"Character {char} is not supported")
         order = self._order[char]
