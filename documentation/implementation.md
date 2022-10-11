@@ -84,44 +84,47 @@ As the project is managed by Poetry, the directory contains the configuration fi
 
 ```
 ├── documentation
-│   ├── guide.md
 │   ├── images
 │   │   └── coverage-report.png
-│   ├── implementation.md
 │   ├── reports
 │   │   ├── week1.md
 │   │   ├── ...
 │   │   └── week6.md
+│   ├── guide.md
+│   ├── implementation.md
 │   ├── specification.md
 │   └── testing.md
 ├── htmlcov
 │   ├── ...
 │   ├── index.html
 │   ├── ...
-├── poetry.lock
-├── pyproject.toml
-├── README.md
 ├── src
 │   ├── app.py
 │   ├── console_io.py
 │   ├── functions
-│   │   ├── crypt.py
 │   │   ├── __init__.py
+│   │   ├── crypt.py
 │   │   ├── keygen.py
 │   ├── index.py
-│   └── tests
-│       ├── functions
-│       │   ├── crypt_test.py
-│       │   ├── __init__.py
-│       │   ├── keygen_test.py
+│   ├── tests
+│   │   ├── functions
+│   │   │   ├── __init__.py
+│   │   │   ├── crypt_test.py
+│   │   │   ├── keygen_test.py
+│   │   ├── __init__.py
+│   └── utils
 │       ├── __init__.py
+│       ├── character_map.py
+│       ├── dictionary.py
 ├── .coverage
 ├── .coveragerc
 ├── .gitignore
 ├── .pylintrc
 ├── .python-version
+├── poetry.lock
+├── pyproject.toml
+├── README.md
 ├── tasks.py
-
 ```
 
 ## Sources
