@@ -3,17 +3,9 @@ from os import name, system
 from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
 
-from console_io import ConsoleIO
+from utils.commands import COMMANDS
 
-COMMANDS = {
-    "q": "[ q ] quit",
-    "h": "[ h ] print the command list",
-    "1": "[ 1 ] generate keys",
-    "2": "[ 2 ] encrypt message",
-    "3": "[ 3 ] decrypt message",
-    "4": "[ 4 ] show public key",
-    "5": "[ 5 ] show private key"
-}
+from console_io import ConsoleIO
 
 
 class Application:
@@ -21,9 +13,10 @@ class Application:
 
     def __init__(self):
         """Initializes a new instance of the application."""
+        self._commands = COMMANDS
+        self._crypt = Crypt()
         self._io = ConsoleIO()
         self._key_generator = KeyGenerator()
-        self._crypt = Crypt()
         self._keys = {}
         self._message_m = -1
         self._message_c = -1
