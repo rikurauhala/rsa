@@ -153,11 +153,15 @@ As the project is managed by Poetry, the directory contains the configuration fi
 │   │   ├── functions
 │   │   │   ├── __init__.py
 │   │   │   ├── crypt_test.py
-│   │   │   ├── keygen_test.py
+│   │   │   └── keygen_test.py
+│   │   ├── utils
+│   │   │   ├── __init__.py
+│   │   │   └── character_map_test.py
 │   │   └── __init__.py
 │   ├── utils
 │   │   ├── __init__.py
 │   │   ├── character_map.py
+│   │   ├── commands.py
 │   │   └── dictionary.py
 │   ├── app.py
 │   ├── console_io.py
