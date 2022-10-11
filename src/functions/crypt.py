@@ -52,7 +52,7 @@ class Crypt:
 
         m = ""
         for char in message:
-            m += str(self._character_map.get_ord(char))
+            m += str(self._character_map.get_order(char))
         return int(m)
 
     def _convert_to_string(self, message):
@@ -72,7 +72,7 @@ class Crypt:
 
         while end <= len(message_int)+1:
             decimal = int(message_int[start:end])
-            symbol = self._character_map.get_chr(decimal)
+            symbol = self._character_map.get_character(decimal)
             message_str += symbol
             start += 2
             end += 2

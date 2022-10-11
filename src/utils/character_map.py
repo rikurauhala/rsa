@@ -13,7 +13,7 @@ class CharacterMap:
         self._characters = CHARACTERS
         self._order = {chr: ord for ord, chr in CHARACTERS.items()}
 
-    def get_chr(self, order):
+    def get_character(self, order):
         """Turns a character into an integer.
 
         Args:
@@ -25,7 +25,7 @@ class CharacterMap:
         char = self._characters[order]
         return char
 
-    def get_ord(self, char):
+    def get_order(self, char):
         """Turns an integer into a character.
 
         Args:
