@@ -21,7 +21,8 @@ class Crypt:
         """
 
         m = self._convert_to_int(m)
-        print(m.bit_length())
+        if m.bit_length() > 1024:
+            raise ValueError("Message is too long!")
         c = pow(m, e, n)
         return c
 

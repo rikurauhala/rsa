@@ -23,3 +23,15 @@ class TestCrypt(unittest.TestCase):
 
     def test_decryption_succeeds(self):
         self.assertEqual(self._message_p, self._message_m)
+
+    def test_message_maximum_length(self):
+        message = ""
+        for _ in range(154):
+            message += "a"
+            message_c = self._crypt.encrypt(message, self._keys["e"], self._keys["n"])
+            message_p = self._crypt.decrypt(message_c, self._keys["d"], self._keys["n"])
+            self.assertEqual(message_p, message)
+        with self.assertRaises(ValueError, msg="Message is too long!"):
+            message += "a"
+            message_c = self._crypt.encrypt(message, self._keys["e"], self._keys["n"])
+            message_p = self._crypt.decrypt(message_c, self._keys["d"], self._keys["n"])

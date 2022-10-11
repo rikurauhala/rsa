@@ -91,7 +91,7 @@ class Application:
                 )
                 self._io.print(f"Encrypted message: {self._message_c}")
                 break
-            except KeyError as error:
+            except (KeyError, ValueError) as error:
                 self._io.print_error(error)
 
     def _decrypt(self):
