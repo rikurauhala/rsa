@@ -1,4 +1,4 @@
-from utils.characters import CharacterMap
+from utils.character_map import CharacterMap
 
 
 class Crypt:
