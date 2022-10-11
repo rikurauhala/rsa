@@ -97,25 +97,25 @@ As the project is managed by Poetry, the directory contains the configuration fi
 ├── htmlcov
 │   ├── ...
 │   ├── index.html
-│   ├── ...
+│   └── ...
 ├── src
 │   ├── app.py
 │   ├── console_io.py
 │   ├── functions
 │   │   ├── __init__.py
 │   │   ├── crypt.py
-│   │   ├── keygen.py
+│   │   └── keygen.py
 │   ├── index.py
 │   ├── tests
 │   │   ├── functions
 │   │   │   ├── __init__.py
 │   │   │   ├── crypt_test.py
 │   │   │   ├── keygen_test.py
-│   │   ├── __init__.py
+│   │   └── __init__.py
 │   └── utils
 │       ├── __init__.py
 │       ├── character_map.py
-│       ├── dictionary.py
+│       └── dictionary.py
 ├── .coverage
 ├── .coveragerc
 ├── .gitignore
@@ -124,7 +124,7 @@ As the project is managed by Poetry, the directory contains the configuration fi
 ├── poetry.lock
 ├── pyproject.toml
 ├── README.md
-├── tasks.py
+└── tasks.py
 ```
 
 ## Sources
