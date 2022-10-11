@@ -74,6 +74,46 @@ A message can be decrypted with the following procedure.
 3. Convert the decrypted message into a string.
     - Conversion is done using the custom CharacterMap object, see below.
 
+#### CharacterMap
+
+CharacterMap is a custom data structure that is used to map characters into corresponding order numbers and vice versa. It works in a similar way to Python's built-in `ord()` and `str()` functions. It is needed to convert string to integers for encryption and decryption. CharacterMap offers only a limited set of characters, but it permits longer messages to be encrypted. The implementation can be found in the file `src/utils/character_map.py`.
+
+The *integer-character* value pairs are stored in a dictionary in the file `src/utils/dictionary.py`. It has the followings contents, meaning only these characters are supported by the application.
+The character set is a subset of the ASCII encoding standard.
+
+|  # | char |  # | char |  # | char |
+| -: | :--: | -: | :--: | -: | :--: |
+| 10 |    a | 40 |    A | 70 |    0 |
+| 11 |    b | 41 |    B | 71 |    1 |
+| 12 |    c | 42 |    C | 72 |    2 |
+| 13 |    d | 43 |    D | 73 |    3 |
+| 14 |    e | 44 |    E | 74 |    4 |
+| 15 |    f | 45 |    F | 75 |    5 |
+| 16 |    g | 46 |    G | 76 |    6 |
+| 17 |    h | 47 |    H | 77 |    7 |
+| 18 |    i | 48 |    I | 78 |    8 |
+| 19 |    j | 49 |    J | 79 |    9 |
+| 20 |    k | 50 |    K | 80 |    ! |
+| 21 |    l | 51 |    L | 81 |    % |
+| 22 |    m | 52 |    M | 82 |    & |
+| 23 |    n | 53 |    N | 83 |    ( |
+| 24 |    o | 54 |    O | 84 |    ) |
+| 25 |    p | 55 |    P | 85 |    * |
+| 26 |    q | 56 |    Q | 86 |    + |
+| 27 |    r | 57 |    R | 87 |    , |
+| 28 |    s | 58 |    S | 88 |    - |
+| 29 |    t | 59 |    T | 89 |    . |
+| 30 |    u | 60 |    U | 90 |    / |
+| 31 |    v | 61 |    V | 91 |    : |
+| 32 |    w | 62 |    W | 92 |    ; |
+| 33 |    x | 63 |    X | 93 |    < |
+| 34 |    y | 64 |    Y | 94 |    > |
+| 35 |    z | 65 |    Z | 95 |    = |
+| 36 |    å | 66 |    Å | 96 |    ? |
+| 37 |    ä | 67 |    Ä | 97 |    @ |
+| 38 |    ö | 68 |    Ö | 98 |    _ |
+| 39 |      | 69 |    " | 99 |    € |
+
 ## Time and space complexities
 
 To be written.
