@@ -130,8 +130,6 @@ As the project is managed by Poetry, the directory contains the configuration fi
 
 ```
 ├── documentation
-│   ├── images
-│   │   └── coverage-report.png
 │   ├── reports
 │   │   ├── week1.md
 │   │   ├── ...

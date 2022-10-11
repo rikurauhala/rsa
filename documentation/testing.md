@@ -27,7 +27,16 @@ $ firefox htmlcov/index.html
 
 ### Coverage report
 
-![Coverage report](/documentation/images/coverage-report.png)
+Coverage report: 97%
+*coverage.py v6.4.4, created at 2022-10-11 18:55 +0300*
+
+| Module 	                 | statements |	missing | excluded | branches | partial | coverage |
+| :------------------------- | ---------: | ------: | -------: | -------: | ------: | -------: |
+| src/functions/crypt.py 	 |         28 |       0 |        0 |        6 |       0 |     100% |
+| src/functions/keygen.py 	 |         64 |       1 |        0 |       18 |       1 |      98% |
+| src/utils/character_map.py | 	       17 |       1 |        0 |       10 |       1 |      93% |
+| src/utils/dictionary.py    |          1 |       0 |        0 |        0 |       0 |     100% |
+| **Total**                  |    **110** |   **2** |    **0** |   **34** |   **2** |  **97%** |
 
 ## Known issues
 

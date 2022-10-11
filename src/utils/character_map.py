@@ -19,6 +19,10 @@ class CharacterMap:
         Args:
             order (integer): An integer with a value between 10 and 99.
 
+        Raises:
+            KeyError: If the order number is not mapped to a character.
+            TypeError: If the order number is not a valid integer.
+
         Returns:
             char (character): A character.
         """
@@ -34,6 +38,9 @@ class CharacterMap:
 
         Args:
             char (character): A character.
+
+        Raises:
+            KeyError: If the character is not supported.
 
         Returns:
             order (integer): An integer with a value between 10 and 99.
