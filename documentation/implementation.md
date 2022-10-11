@@ -99,23 +99,23 @@ As the project is managed by Poetry, the directory contains the configuration fi
 │   ├── index.html
 │   └── ...
 ├── src
-│   ├── app.py
-│   ├── console_io.py
 │   ├── functions
 │   │   ├── __init__.py
 │   │   ├── crypt.py
 │   │   └── keygen.py
-│   ├── index.py
 │   ├── tests
 │   │   ├── functions
 │   │   │   ├── __init__.py
 │   │   │   ├── crypt_test.py
 │   │   │   ├── keygen_test.py
 │   │   └── __init__.py
-│   └── utils
-│       ├── __init__.py
-│       ├── character_map.py
-│       └── dictionary.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── character_map.py
+│   │   └── dictionary.py
+│   ├── app.py
+│   ├── console_io.py
+│   └── index.py
 ├── .coverage
 ├── .coveragerc
 ├── .gitignore
