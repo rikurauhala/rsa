@@ -30,7 +30,7 @@ The following algorithm is used to generate the public and the private key. All 
     - Usually $2^{16} = 65537$ is a good choice and my implementation also uses this value.
 6. Calculate $d$.
     - $d$ can be calculated using the *extended Euclidean algorithm*.
-    - $d$ is the exponent part of the *secret key* and should **not** be published anywhere.
+    - $d$ is the exponent part of the *private key* and should **not** be published anywhere.
 
 To summarize:
 - The public key is made of the modulus $n$ and the *encryption exponent* $e$.
@@ -50,23 +50,29 @@ A message can be encrypted with the following procedure.
 
 1. Enter a plaintext message.
 2. Convert the message into an integer.
+    - Conversion is done using the custom CharacterMap object, see below.
 3. Encrypt the message.
-
-<!-- Add a more detailed description -->
+    - The message can be encrypted by calculating  $c \equiv m^{e}$ (mod $n$), where
+        - $c$ is the encrypted ciphertext
+        - $m$ is the plaintext to be encrypted
+        - $e$ is the public encryption exponent
+        - $n$ is the modulus
 
 #### Decrypting a message
 
 A message can be decrypted with the following procedure.
 
 1. Enter the decrypted message.
+    - In the context of this program, the message is stored in memory.
 2. Decrypt the message.
+    - The message can be decrypted by calculating, $c^{d} \equiv (m^{e})^{d} \equiv m$ (mod $n$) where
+        - $c$ is the encrypted ciphertext
+        - $m$ is the original plaintext
+        - $e$ is the public encryption exponent
+        - $d$ is the private decryption exponent
+        - $n$ is the modulus
 3. Convert the decrypted message into a string.
-
-<!-- Add a more detailed description -->
-
-#### CharacterMap
-
-To be written.
+    - Conversion is done using the custom CharacterMap object, see below.
 
 ## Time and space complexities
 
