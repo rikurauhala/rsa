@@ -16,6 +16,9 @@ class Crypt:
             e (integer): Public key encryption exponent.
             n (integer): Public key modulus.
 
+        Raises:
+            ValueError: If the message is too long (>1024 bits).
+
         Returns:
             c (integer): Ciphertext message i.e. the encrypted message.
         """
