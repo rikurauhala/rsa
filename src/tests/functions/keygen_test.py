@@ -1,3 +1,5 @@
+import sympy
+
 import unittest
 
 from functions.keygen import KeyGenerator
@@ -33,3 +35,9 @@ class TestKeyGenerator(unittest.TestCase):
         actual_length = self._n.bit_length()
         expected_length = 1024
         self.assertEqual(actual_length, expected_length)
+
+    def test_miller_rabin_returns_prime_numbers(self):
+        bits = 1024
+        probable_prime = self._key_generator._get_random_prime(bits)
+        is_prime = sympy.isprime(probable_prime)
+        self.assertTrue(is_prime)
