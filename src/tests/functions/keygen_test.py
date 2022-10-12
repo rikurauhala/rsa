@@ -24,10 +24,8 @@ class TestKeyGenerator(unittest.TestCase):
     def test_key_dictionary_contains_correct_items(self):
         type_of_n = type(self._n)
         self.assertEqual(type_of_n, int)
-
         type_of_e = type(self._e)
         self.assertEqual(type_of_e, int)
-
         type_of_d = type(self._d)
         self.assertEqual(type_of_d, int)
 

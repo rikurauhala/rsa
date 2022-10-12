@@ -22,7 +22,6 @@ class Crypt:
         Returns:
             c (integer): Ciphertext message i.e. the encrypted message.
         """
-
         m = self._convert_to_int(m)
         if m.bit_length() > 1024:
             raise ValueError("Message is too long!")
@@ -40,7 +39,6 @@ class Crypt:
         Returns:
             m (integer): Plaintext message, i.e. the decrypted original message.
         """
-
         m = pow(c, d, n)
         m = self._convert_to_string(m)
         return m
@@ -54,7 +52,6 @@ class Crypt:
         Returns:
             m (integer): Encrypted message as an integer.
         """
-
         m = ""
         for char in message:
             m += str(self._character_map.get_order(char))
@@ -69,7 +66,6 @@ class Crypt:
         Returns:
             message_str (string): Decrypted message as a string.
         """
-
         message_int = str(message)
 
         message_str = ""

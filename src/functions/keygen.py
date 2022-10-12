@@ -15,7 +15,6 @@ class KeyGenerator:
         Returns:
             keys (dictionary): {Key: string, value: integer} | Values of n, e and d
         """
-
         bit_length = 1024
 
         p = self._get_random_prime(bit_length//2)
@@ -66,7 +65,6 @@ class KeyGenerator:
         Returns:
             n (integer): A probable prime number.
         """
-
         while True:
             n = self._get_random_integer(bits)
             if n % 2 == 0:
@@ -85,7 +83,6 @@ class KeyGenerator:
         Returns:
             boolean: Whether n is a probable prime or not.
         """
-
         d = n-1
         s = 0
 
