@@ -190,4 +190,5 @@ The following sources have been used in the development process.
 - [Public Key Cryptography: RSA Encryption Algorithm](https://www.youtube.com/watch?v=wXB-V_Keiu8) (2012) | Art of the Problem on youtube.com
 - [RSA (cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) (n.d.) | wikipedia.org
 - [RSA - bitlength of p and q](https://stackoverflow.com/questions/12192116/rsa-bitlength-of-p-and-q/12195783#12195783) (2012) | Mark Dickinson on stackoverflow.com
+- [RSA and prime-generator algorithms](https://stackoverflow.com/questions/4159333/rsa-and-prime-generator-algorithms/4160517#4160517) (2010) | Thomas Pornin on stackoverflow.com
 - [RSA Encryption](https://brilliant.org/wiki/rsa-encryption/) (n.d.) | brilliant.org
