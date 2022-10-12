@@ -71,7 +71,7 @@ class KeyGenerator:
             n = self._get_random_integer(bits)
             if n % 2 == 0:
                 n += 1
-            n_is_prime = self._miller_rabin(n, 10)
+            n_is_prime = self._miller_rabin(n, 64)
             if n_is_prime:
                 return n
 
