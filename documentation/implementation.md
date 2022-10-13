@@ -114,6 +114,10 @@ The character set is a subset of the ASCII encoding standard.
 | 38 |    ö | 68 |    Ö | 98 |    _ |
 | 39 |      | 69 |    " | 99 |    € |
 
+#### Integers
+
+Python supports very large integer out of the box, so there was no need to implement any data structures to hold large values.
+
 ## Time and space complexities
 
 To be written.
