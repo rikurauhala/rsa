@@ -2,7 +2,7 @@
 
 ## Weekly report
 
-To be written.
+This week I focused on the documentation and writing more unit tests. The program works as intended and I could call it ready, but as there is still time to work on it, I will try to make some improvements. I've found it hard to optimize the speed, but I will look more into it. Also, more testing is still required.
 
 ## Work hours
 
