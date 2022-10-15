@@ -4,7 +4,7 @@
 
 Start by getting the source code and installing dependencies. [Poetry](https://python-poetry.org/) should be installed on your machine. More information about Poetry and dependencies can be found [here](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta) (in Finnish).
 
-Please note that Python **version 3.10.2** or later should be used, otherwise the code won't run as it is using the new *match case* syntax. You may want to look into [pyenv](https://github.com/pyenv/pyenv) to switch to the correct version.
+Please note that Python **version 3.8** or later should be used. You may want to look into [pyenv](https://github.com/pyenv/pyenv) to switch to the correct version.
 
 ```bash
 # Get the source code
