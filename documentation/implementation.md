@@ -186,6 +186,14 @@ As the project is managed by Poetry, the directory contains the configuration fi
 └── tasks.py
 ```
 
+## Feature ideas
+
+The program could still be expanded and improved. Here are some potential ideas for further development at a later date:
+- Graphical user interface
+- Padding
+- Customizable key length
+- Message signing
+
 ## Sources
 
 The following sources have been used in the development process.
