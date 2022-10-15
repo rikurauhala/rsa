@@ -4,14 +4,16 @@
 
 Automated tests has been written using [pytest](https://docs.pytest.org/en/7.1.x). A test coverage report can be generated with [coverage](https://coverage.readthedocs.io/en/6.5.0/).
 
-## Running tests
+## Unit testing
+
+### Running unit tests
 
 ```bash
 # Tests can be run with the command
 $ poetry run invoke test
 ```
 
-## Test coverage
+### Test coverage
 
 ```bash
 # Test coverage can be checked with the command
@@ -25,7 +27,7 @@ $ poetry run invoke coverage-report
 $ firefox htmlcov/index.html
 ```
 
-### Coverage report
+#### Coverage report
 
 Coverage report: 97%
 *coverage.py v6.4.4, created at 2022-10-11 20:00 +0300*
@@ -37,6 +39,22 @@ Coverage report: 97%
 | src/utils/character_map.py | 	       17 |       1 |        0 |       10 |       1 |      93% |
 | src/utils/dictionary.py    |          1 |       0 |        0 |        0 |       0 |     100% |
 | **Total**                  |    **112** |   **2** |    **0** |   **36** |   **2** |  **97%** |
+
+## Performance testing
+
+Performance tests have been implemented in a separate module and they can be found in the file `src/tests/performance.py`. The performance of the application is tested by comparing it to [another implementation](https://github.com/sybrenstuvel/python-rsa) with the same input parameters.
+
+### Running the performance test
+
+```bash
+# The performance test can be run with the following command
+# Please be patient as it may take some time to finish
+$ poetry run invoke coverage
+```
+
+### Results
+
+To be added.
 
 ## Known issues
 
