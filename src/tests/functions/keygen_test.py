@@ -8,6 +8,7 @@ from functions.keygen import KeyGenerator
 class TestKeyGenerator(unittest.TestCase):
     def setUp(self):
         self._key_generator = KeyGenerator()
+        self._key_length = 1024
         self._keys = self._key_generator.generate_keys()
         self._n = self._keys["n"]
         self._e = self._keys["e"]
@@ -31,11 +32,9 @@ class TestKeyGenerator(unittest.TestCase):
 
     def test_key_length_is_correct(self):
         actual_length = self._n.bit_length()
-        expected_length = 1024
-        self.assertEqual(actual_length, expected_length)
+        self.assertEqual(actual_length, self._key_length)
 
     def test_miller_rabin_returns_prime_numbers(self):
-        bits = 1024
-        probable_prime = self._key_generator._get_random_prime(bits)
+        probable_prime = self._key_generator._get_random_prime(self._key_length)
         is_prime = sympy.isprime(probable_prime)
         self.assertTrue(is_prime)
