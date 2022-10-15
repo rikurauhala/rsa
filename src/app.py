@@ -31,23 +31,23 @@ class Application:
         while True:
             command = self._io.read().lower()
             self._clear_console()
-            match command:
-                case "q":
-                    break
-                case "h":
-                    self._print_commands()
-                case "1":
-                    self._generate_keys()
-                case "2":
-                    self._encrypt()
-                case "3":
-                    self._decrypt()
-                case "4":
-                    self._print_public_key()
-                case "5":
-                    self._print_private_key()
-                case _:
-                    self._print_invalid_command()
+
+            if command == "q":
+                break
+            if command == "h":
+                self._print_commands()
+            elif command == "1":
+                self._generate_keys()
+            elif command == "2":
+                self._encrypt()
+            elif command == "3":
+                self._decrypt()
+            elif command == "4":
+                self._print_public_key()
+            elif command == "5":
+                self._print_private_key()
+            else:
+                self._print_invalid_command()
 
     def _print_commands(self):
         """Prints a list of available commands."""
