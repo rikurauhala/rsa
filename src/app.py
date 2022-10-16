@@ -39,13 +39,17 @@ class Application:
             elif command == "1":
                 self._generate_keys()
             elif command == "2":
-                self._encrypt()
+                if self._keys_exist():
+                    self._encrypt()
             elif command == "3":
-                self._decrypt()
+                if self._keys_exist():
+                    self._decrypt()
             elif command == "4":
-                self._print_public_key()
+                if self._keys_exist():
+                    self._print_public_key()
             elif command == "5":
-                self._print_private_key()
+                if self._keys_exist():
+                    self._print_private_key()
             else:
                 self._print_invalid_command()
 
@@ -123,3 +127,9 @@ class Application:
 
     def _print_invalid_command(self):
         self._io.print_error("Invalid command!")
+
+    def _keys_exist(self):
+        if not self._keys:
+            self._io.print_error("Keys have not been generated yet!")
+            return False
+        return True
