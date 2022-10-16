@@ -16,5 +16,5 @@ Python version was downgraded from 3.10.2 to 3.8 because of compatibility issues
 | 2022-10-10 |      2 | writing documentation, working on a custom character map structure   |
 | 2022-10-11 |      7 | writing documentation and tests, fixing issues                       |
 | 2022-10-12 |      1 | writing tests, fixing issues                                         |
-| 2022-10-15 |      3 | writing documentation and tests, fixing                              |
+| 2022-10-15 |      3 | writing documentation and tests, fixing issues                       |
 |      total |     14 |                                                                      |
