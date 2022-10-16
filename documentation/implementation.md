@@ -190,9 +190,12 @@ As the project is managed by Poetry, the directory contains the configuration fi
 
 The program could still be expanded and improved. Here are some potential ideas for further development at a later date:
 - Graphical user interface
+- Improved command-line interaface using a CLI library
 - Padding
 - Customizable key length
 - Message signing
+- Writing to and reading the keys from a file
+- Writing to and reading messages from a file
 
 ## Sources
 
