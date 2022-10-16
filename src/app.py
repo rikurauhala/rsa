@@ -30,7 +30,6 @@ class Application:
 
         while True:
             command = self._io.read().lower()
-            self._clear_console()
 
             if command == "q":
                 break
