@@ -22,5 +22,6 @@ This document is used to keep track of the time I have spent working on the proj
 | 2022-10-10 |      2 | writing documentation, working on a custom character map structure   |
 | 2022-10-11 |      7 | writing documentation and tests, fixing issues                       |
 | 2022-10-12 |      1 | writing tests, fixing issues                                         |
-| 2022-10-15 |      3 | writing documentation and tests, fixing                              |
-|      total |     54 |                                                                      |
+| 2022-10-15 |      3 | writing documentation and tests, fixing issues                       |
+| 2022-10-17 |      2 | working on performance testing, fixing issues                        |
+|      total |     56 |                                                                      |
