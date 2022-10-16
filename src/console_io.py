@@ -25,6 +25,14 @@ class ConsoleIO:
         error_message = stylize(f"Error: {message}", style)
         print(error_message)
 
+    def print_title(self, text):
+        """Prints a title.
+
+        Args:
+            text (string): Text to be printed.
+        """
+        print(text + "\n")
+
     def read(self):
         """Reads user input.
 
