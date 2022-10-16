@@ -13,7 +13,7 @@ def test(ctx):
 
 @task
 def performance_test(ctx):
-    ctx.run("python3 src/tests/performance.py", pty=True)
+    ctx.run("python3 src/performance.py", pty=True)
 
 
 @task
