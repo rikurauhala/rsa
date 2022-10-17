@@ -1,3 +1,4 @@
+import random
 import sympy
 
 import unittest
@@ -35,6 +36,17 @@ class TestKeyGenerator(unittest.TestCase):
         self.assertEqual(actual_length, self._key_length)
 
     def test_miller_rabin_returns_prime_numbers(self):
-        probable_prime = self._key_generator._get_random_prime(self._key_length)
-        is_prime = sympy.isprime(probable_prime)
-        self.assertTrue(is_prime)
+        for _ in range(10):
+            probable_prime = self._key_generator._get_random_prime(self._key_length)
+            is_prime = sympy.isprime(probable_prime)
+            self.assertTrue(is_prime)
+
+    def test_divide_returns_quotient_and_remainder(self):
+        quotient, remainder = self._key_generator._divide(3, 10)
+        self.assertEqual(quotient, 3)
+        self.assertEqual(remainder, 1)
+        a = random.randint(0, 100000)
+        b = random.randint(0, 100000)
+        quotient, remainder = self._key_generator._divide(a, b)
+        self.assertEqual(quotient, b // a)
+        self.assertEqual(remainder, b % a)
