@@ -2,7 +2,7 @@
 
 ## Overview
 
-Automated tests has been written using [pytest](https://docs.pytest.org/en/7.1.x). A test coverage report can be generated with [coverage](https://coverage.readthedocs.io/en/6.5.0/).
+The application has been tested in multiple ways. Automated tests has been written using [pytest](https://docs.pytest.org/en/7.1.x). A test coverage report can be generated with [coverage](https://coverage.readthedocs.io/en/6.5.0/). Performance testing has been conducted with a script utilizing [pytest-benchmark](https://github.com/ionelmc/pytest-benchmark). See a more detailed breakdown of testing below.
 
 ## Unit testing
 
@@ -10,6 +10,7 @@ Automated tests has been written using [pytest](https://docs.pytest.org/en/7.1.x
 
 ```bash
 # Tests can be run with the command
+# Please be patient as it may take some time to finish
 $ poetry run invoke test
 ```
 
@@ -30,15 +31,15 @@ $ firefox htmlcov/index.html
 #### Coverage report
 
 Coverage report: 97%
-*coverage.py v6.4.4, created at 2022-10-11 20:00 +0300*
+*coverage.py v6.5.0, created at 2022-10-17 22:17 +0300*
 
 | Module 	                 | statements |	missing | excluded | branches | partial | coverage |
 | :------------------------- | ---------: | ------: | -------: | -------: | ------: | -------: |
 | src/functions/crypt.py 	 |         30 |       0 |        0 |        8 |       0 |     100% |
-| src/functions/keygen.py 	 |         64 |       1 |        0 |       18 |       1 |      98% |
-| src/utils/character_map.py | 	       17 |       1 |        0 |       10 |       1 |      93% |
+| src/functions/keygen.py 	 |         63 |       1 |        0 |       16 |       1 |      97% |
+| src/utils/character_map.py | 	       17 |       1 |        0 |        8 |       1 |      92% |
 | src/utils/dictionary.py    |          1 |       0 |        0 |        0 |       0 |     100% |
-| **Total**                  |    **112** |   **2** |    **0** |   **36** |   **2** |  **97%** |
+| **Total**                  |    **111** |   **2** |    **0** |   **30** |   **2** |  **97%** |
 
 ## Performance testing
 
@@ -48,7 +49,6 @@ Performance tests have been implemented in a separate module and they can be fou
 
 ```bash
 # The performance test can be run with the following command
-# Please be patient as it may take some time to finish
 $ poetry run invoke performance-test
 ```
 
