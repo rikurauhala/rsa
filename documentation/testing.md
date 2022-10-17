@@ -42,14 +42,14 @@ Coverage report: 97%
 
 ## Performance testing
 
-Performance tests have been implemented in a separate module and they can be found in the file `src/tests/performance.py`. The performance of the application is tested by comparing it to [another implementation](https://github.com/sybrenstuvel/python-rsa) with the same input parameters.
+Performance tests have been implemented in a separate module and they can be found in the file `src/performance.py`. The performance of the application is tested by comparing it to [another implementation](https://github.com/sybrenstuvel/python-rsa) with the same input parameters. The add-on [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/stable/index.html) is used for benchmarking.
 
 ### Running the performance test
 
 ```bash
 # The performance test can be run with the following command
 # Please be patient as it may take some time to finish
-$ poetry run invoke coverage
+$ poetry run invoke performance-test
 ```
 
 ### Results
