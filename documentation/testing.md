@@ -79,6 +79,10 @@ When it comes to encryption, my implementation would appear to be faster. Withou
 
 In the case of decryption however, my implementation runs considerably slower.
 
+## Integration testing
+
+Integration testing has been conducted manually by running and testing the application via the command-line interface. Several flaws were also pointed out in the second peer review and have been since fixed.
+
 ## Known issues
 
 See [Issues](https://github.com/rikurauhala/rsa/issues) for an up-to-date list.
