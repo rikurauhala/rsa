@@ -23,5 +23,6 @@ This document is used to keep track of the time I have spent working on the proj
 | 2022-10-11 |      7 | writing documentation and tests, fixing issues                       |
 | 2022-10-12 |      1 | writing tests, fixing issues                                         |
 | 2022-10-15 |      3 | writing documentation and tests, fixing issues                       |
-| 2022-10-17 |      2 | working on performance testing, fixing issues                        |
-|      total |     56 |                                                                      |
+| 2022-10-16 |      2 | working on performance testing, fixing issues                        |
+| 2022-10-17 |      3 | finishing and documenting the performance test                       |
+|      total |     59 |                                                                      |
