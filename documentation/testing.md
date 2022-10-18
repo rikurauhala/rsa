@@ -83,6 +83,19 @@ In the case of decryption however, my implementation runs considerably slower.
 
 Integration testing has been conducted manually by running and testing the application via the command-line interface. Several flaws were also pointed out in the second peer review and have been since fixed.
 
+## Code quality
+
+The keep track of the quality of the source code, [pylint](https://pypi.org/project/pylint/) is used. To manually check the quality, run the command `poetry run invoke lint`. The linter should have nothing to complain about and the following results should be displayed.
+
+```
+user@machine:~/git/rsa$ poetry run invoke lint
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+```
+
+The file *.pylintrc* is used to configure pylint.
+
 ## Known issues
 
 See [Issues](https://github.com/rikurauhala/rsa/issues) for an up-to-date list.
