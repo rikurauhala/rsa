@@ -41,7 +41,7 @@ class Application:
                 if self._keys_exist():
                     self._encrypt()
             elif command == "3":
-                if self._keys_exist():
+                if self._keys_exist() and self._message_exists():
                     self._decrypt()
             elif command == "4":
                 if self._keys_exist():
@@ -122,5 +122,11 @@ class Application:
     def _keys_exist(self):
         if not self._keys:
             self._io.print_error("Keys have not been generated yet!")
+            return False
+        return True
+
+    def _message_exists(self):
+        if self._message_m == -1:
+            self._io.print_error("No message to decrypt yet!")
             return False
         return True
