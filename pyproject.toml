@@ -10,7 +10,6 @@ invoke = "^1.7.1"
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-autopep8 = "^1.7.0"
 coverage = "^6.4.4"
 pylint = "^2.15.2"
 pytest = "^7.1.3"
