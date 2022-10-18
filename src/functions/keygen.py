@@ -86,6 +86,9 @@ class KeyGenerator:
     def _get_random_prime(self, bits):
         """Generates a random probable prime number with desired bit length.
 
+        Note that the algorithm is probabilistic in nature and the number
+        returned is only a (highly) probable prime.
+
         Args:
             bits (integer): Bit length of the prime, should be a power of two.
 

@@ -47,6 +47,13 @@ class TestKeyGenerator(unittest.TestCase):
         self.assertEqual(phi, (p-1)*(q-1))
         self.assertEqual(math.gcd(self._e, phi), 1)
 
+    def test_d_has_expected_properties(self):
+        p = self._key_generator._get_random_prime(self._key_length//2)
+        q = self._key_generator._get_random_prime(self._key_length//2)
+        phi = self._key_generator._calculate_phi(p, q)
+        d = self._key_generator._modinv(self._e, phi)
+        self.assertEqual((d*self._e)%phi, 1)
+
     def test_key_length_is_correct(self):
         actual_length = self._n.bit_length()
         self.assertEqual(actual_length, self._key_length)
