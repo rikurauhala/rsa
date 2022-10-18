@@ -19,9 +19,24 @@ $ poetry install
 
 ## Running
 
-The application can be started by running the start command. The application has a straightforward commandline interface. The command list will be printed after starting the application or by typing `h`. 
+The application can be started by running the start command. The application has a straightforward commandline interface. 
 
 ```bash
 # Run the application
 $ poetry run invoke start
+```
+
+## Commands
+
+The application has the following commands. Commands can be given by running the application and typing them in the command-line interface after the green `>` symbol. The list of commands can be found here or by typing the command `h` (short for *help*).
+
+```
+Commands:
+[ q ] quit
+[ h ] print the command list
+[ 1 ] generate keys
+[ 2 ] encrypt message
+[ 3 ] decrypt message
+[ 4 ] show public key
+[ 5 ] show private key
 ```
