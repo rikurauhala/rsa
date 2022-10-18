@@ -21,11 +21,10 @@ class KeyGenerator:
         q = self._get_random_prime(bit_length//2)
 
         n = self._calculate_n(p, q)
-
-        phi_n = (p-1)*(q-1)
+        phi = self._calculate_phi(p, q)
 
         e = 65537
-        d = self._modinv(e, phi_n)
+        d = self._modinv(e, phi)
 
         keys = {
             "n": n,
@@ -47,6 +46,21 @@ class KeyGenerator:
         """
         n = p*q
         return n
+
+    def _calculate_phi(self, p, q):
+        """Calculates the totient.
+
+        Euler totient function phi(n) = (p-1)(q-1).
+
+        Args:
+            p (integer): A prime number.
+            q (integer): A prime number.
+
+        Returns:
+            phi (integer): The totient.
+        """
+        phi = (p-1)*(q-1)
+        return phi
 
     def _get_random_integer(self, bits):
         """Generates a random integer with desired bit length.

@@ -1,6 +1,6 @@
+import math
 import random
 import sympy
-
 import unittest
 
 from functions.keygen import KeyGenerator
@@ -39,6 +39,13 @@ class TestKeyGenerator(unittest.TestCase):
             self.assertEqual(p.bit_length(), self._key_length//2)
             self.assertEqual(q.bit_length(), self._key_length//2)
             self.assertEqual(n.bit_length(), self._key_length)
+
+    def test_phi_has_expected_properties(self):
+        p = self._key_generator._get_random_prime(self._key_length//2)
+        q = self._key_generator._get_random_prime(self._key_length//2)
+        phi = self._key_generator._calculate_phi(p, q)
+        self.assertEqual(phi, (p-1)*(q-1))
+        self.assertEqual(math.gcd(self._e, phi), 1)
 
     def test_key_length_is_correct(self):
         actual_length = self._n.bit_length()
