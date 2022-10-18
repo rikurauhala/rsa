@@ -31,6 +31,15 @@ class TestKeyGenerator(unittest.TestCase):
         type_of_d = type(self._d)
         self.assertEqual(type_of_d, int)
 
+    def test_n_has_expected_properties(self):
+        for _ in range(10):
+            p = self._key_generator._get_random_prime(self._key_length//2)
+            q = self._key_generator._get_random_prime(self._key_length//2)
+            n = self._key_generator._calculate_n(p, q)
+            self.assertEqual(p.bit_length(), self._key_length//2)
+            self.assertEqual(q.bit_length(), self._key_length//2)
+            self.assertEqual(n.bit_length(), self._key_length)
+
     def test_key_length_is_correct(self):
         actual_length = self._n.bit_length()
         self.assertEqual(actual_length, self._key_length)

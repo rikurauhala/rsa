@@ -20,7 +20,7 @@ class KeyGenerator:
         p = self._get_random_prime(bit_length//2)
         q = self._get_random_prime(bit_length//2)
 
-        n = p*q
+        n = self._calculate_n(p, q)
 
         phi_n = (p-1)*(q-1)
 
@@ -34,6 +34,19 @@ class KeyGenerator:
         }
 
         return keys
+
+    def _calculate_n(self, p, q):
+        """Calculates the modulus part of the keys.
+
+        Args:
+            p (integer): A prime number.
+            q (integer): A prime number.
+
+        Returns:
+            n (integer): The modulus.
+        """
+        n = p*q
+        return n
 
     def _get_random_integer(self, bits):
         """Generates a random integer with desired bit length.

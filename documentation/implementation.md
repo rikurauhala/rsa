@@ -193,7 +193,7 @@ The project has the following file structure. Ignored or generated files and dir
 
 The program could still be expanded and improved. Here are some potential ideas for further development at a later date:
 - Graphical user interface
-- Improved command-line interaface using a CLI library
+- Improved command-line interface using a CLI library
 - Padding
 - Customizable key length
 - Message signing
