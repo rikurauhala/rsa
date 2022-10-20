@@ -58,11 +58,17 @@ class TestKeyGenerator(unittest.TestCase):
         actual_length = self._n.bit_length()
         self.assertEqual(actual_length, self._key_length)
 
-    def test_miller_rabin_returns_prime_numbers(self):
+    def test_get_random_prime_number_generator(self):
         for _ in range(10):
             probable_prime = self._key_generator._get_random_prime(self._key_length)
             is_prime = sympy.isprime(probable_prime)
             self.assertTrue(is_prime)
+
+    def test_miller_rabin(self):
+        for _ in range(10):
+            n = self._key_generator._get_random_integer(self._key_length)
+            n_is_prime = self._key_generator._miller_rabin(n, 64)
+            self.assertEqual(n_is_prime, sympy.isprime(n))
 
     def test_divide_returns_quotient_and_remainder(self):
         quotient, remainder = self._key_generator._divide(3, 10)
