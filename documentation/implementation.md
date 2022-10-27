@@ -16,6 +16,7 @@ The following algorithm is used to generate the public and the private key. All 
 
 1. Choose a desired *key length*
     - Should be a power of two, usually $2^{10} = 1024$, $2^{11} = 2048$ or $2^{12} = 4096$
+    - This application uses 1024 bit keys
     - Greater key length permits longer messages and offers stronger encryption but key generation will take longer
 2. Choose two *distinct* prime numbers, $p$ and $q$
     - These values are to be kept secret and disposed of after key generation
@@ -47,9 +48,9 @@ The application generates random prime numbers in the following way.
     - The Python *secrets* module is used for reliable random number generation
     - If the number yielded by the generator is even, one is added to make it odd
 2. Use the Miller-Rabin algorithm to test for primality
-    - 64 rounds are used
+    - 64 rounds are used in this application
         - The value is arbitrary, but high enough
-3. If the test is passed return $n$, otherwise go to step 2
+3. Return $n$ if the test is passed, otherwise go to step 2
 
 ### Encryption and decryption
 
@@ -191,7 +192,7 @@ The project has the following file structure. Ignored or generated files and dir
 
 ## Feature ideas
 
-The program could still be expanded and improved. Here are some potential ideas for further development at a later date:
+The program could still be expanded and improved. Here are some ideas for functionality to be implemented at a later date:
 - Graphical user interface
 - Improved command-line interface using a CLI library
 - Padding
