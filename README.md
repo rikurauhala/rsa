@@ -1,8 +1,6 @@
 ## About
 
-This repository contains my project created for the course ["Tiralabra"](https://tiralabra.github.io/2022_p1/index) at the University of Helsinki. The goal is to implement the [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) algorithm in Python. Work in progress.
-
-See the user guide to get started.
+This application implements a limited version of the [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) cryptosystem in Python. It is created for demonstrative purposes and to better understand the underlying data structures and algorithms. This application is not intended for real life use and is not practical for that purpose either as the keys and messages are stored in memory only. However, the contents of this repository may be of value for computer science students or for those interested in algorithms and cryptography.
 
 ## Documentation
 
