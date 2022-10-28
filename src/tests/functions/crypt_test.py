@@ -45,6 +45,18 @@ class TestCrypt(unittest.TestCase):
         with self.assertRaises(ValueError, msg="Message cannot be empty!"):
             self._crypt.encrypt(message_m, self._keys["e"], self._keys["n"])
 
+    def test_convert_to_int(self):
+        string = "abc"
+        integer_actual = self._crypt._convert_to_int(string)
+        integer_expected = 101112
+        self.assertEqual(integer_actual, integer_expected)
+
+    def test_convert_to_string(self):
+        integer = 101112
+        string_actual = self._crypt._convert_to_string(integer)
+        string_expected = "abc"
+        self.assertEqual(string_actual, string_expected)
+
     def test_message_maximum_length(self):
         message = ""
         for _ in range(154):
