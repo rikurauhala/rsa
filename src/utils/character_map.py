@@ -1,4 +1,4 @@
-from utils.dictionary import CHARACTERS
+from utils.characters import CHARACTERS
 
 
 class CharacterMap:

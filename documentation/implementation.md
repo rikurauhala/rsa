@@ -90,7 +90,7 @@ A message can be decrypted with the following procedure.
 
 CharacterMap is a custom data structure that is used to map characters into corresponding order numbers and vice versa. It works in a similar way to Python's built-in `ord()` and `str()` functions. It is needed to convert string to integers for encryption and decryption. CharacterMap offers only a limited set of characters, but it permits longer messages to be encrypted. The implementation can be found in the file `src/utils/character_map.py`.
 
-The *integer-character* value pairs are stored in a dictionary in the file `src/utils/dictionary.py`. It has the followings contents, meaning only these characters are supported by the application.
+The *integer-character* value pairs are stored in a dictionary in the file `src/utils/characters.py`. It has the followings contents, meaning only these characters are supported by the application.
 The character set is a subset of the ASCII encoding standard.
 
 |  # | char |  # | char |  # | char |
