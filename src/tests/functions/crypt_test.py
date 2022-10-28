@@ -3,9 +3,12 @@ import unittest
 from functions.crypt import Crypt
 from functions.keygen import KeyGenerator
 
+from utils.characters import CHARACTERS
+
 
 class TestCrypt(unittest.TestCase):
     def setUp(self):
+        self._characters = CHARACTERS
         self._crypt = Crypt()
         self._key_generator = KeyGenerator()
         self._keys = self._key_generator.generate_keys()
@@ -23,6 +26,24 @@ class TestCrypt(unittest.TestCase):
 
     def test_decryption_succeeds(self):
         self.assertEqual(self._message_p, self._message_m)
+
+    def test_supported_characters_can_be_used(self):
+        message_m = ""
+        for character in self._characters.values():
+            message_m += character
+        message_c = self._crypt.encrypt(message_m, self._keys["e"], self._keys["n"])
+        message_p = self._crypt.decrypt(message_c, self._keys["d"], self._keys["n"])
+        self.assertEqual(message_p, message_m)
+
+    def test_unsupported_characters_cannot_be_used(self):
+        message_m = "$"
+        with self.assertRaises(KeyError, msg=f"Character {message_m} is not supported"):
+            self._crypt.encrypt(message_m, self._keys["e"], self._keys["n"])
+
+    def test_message_cannot_be_empty(self):
+        message_m = ""
+        with self.assertRaises(ValueError, msg="Message cannot be empty!"):
+            self._crypt.encrypt(message_m, self._keys["e"], self._keys["n"])
 
     def test_message_maximum_length(self):
         message = ""

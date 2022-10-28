@@ -22,6 +22,8 @@ class Crypt:
         Returns:
             c (integer): Ciphertext message i.e. the encrypted message.
         """
+        if len(m) == 0:
+            raise ValueError("Message cannot be empty!")
         m = self._convert_to_int(m)
         if m.bit_length() > 1024:
             raise ValueError("Message is too long!")

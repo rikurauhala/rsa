@@ -1,7 +1,7 @@
 import unittest
 
 from utils.character_map import CharacterMap
-from utils.dictionary import CHARACTERS
+from utils.characters import CHARACTERS
 
 
 class TestCharacterMap(unittest.TestCase):
