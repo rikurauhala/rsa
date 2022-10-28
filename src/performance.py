@@ -9,7 +9,7 @@ crypt = Crypt()
 key_generator = KeyGenerator()
 message = "Hello, world!"
 key_length = 1024
-rounds = 100
+rounds = 2000
 
 
 @pytest.mark.benchmark(min_rounds=rounds)
