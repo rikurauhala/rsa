@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "rsa-rvr"
-version = "0.1.0"
+version = "1.0"
 description = "Implementation of the RSA algorithm"
 authors = ["Riku Rauhala <riku@rauhala.io>"]
+repository = "https://github.com/rikurauhala/rsa"
 
 [tool.poetry.dependencies]
 colored = "^1.4.3"
