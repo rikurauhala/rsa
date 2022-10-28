@@ -31,15 +31,14 @@ $ firefox htmlcov/index.html
 #### Coverage report
 
 Coverage report: 99%
-*coverage.py v6.5.0, created at 2022-10-19 10:11 +0300*
+*coverage.py v6.5.0, created at 2022-10-28 13:25 +0300*
 
 | Module 	                 | statements |	missing | excluded | branches | partial | coverage |
 | :------------------------- | ---------: | ------: | -------: | -------: | ------: | -------: |
-| src/functions/crypt.py 	 |         30 |       0 |        0 |        8 |       0 |     100% |
+| src/functions/crypt.py 	 |         32 |       0 |        0 |        8 |       0 |     100% |
 | src/functions/keygen.py 	 |         69 |       1 |        0 |       16 |       1 |      98% |
 | src/utils/character_map.py | 	       17 |       0 |        0 |        8 |       0 |     100% |
-| src/utils/dictionary.py    |          1 |       0 |        0 |        0 |       0 |     100% |
-| **Total**                  |    **117** |   **1** |    **0** |   **30** |   **1** |  **99%** |
+| **Total**                  |    **118** |   **1** |    **0** |   **32** |   **1** |  **99%** |
 
 ## Performance testing
 
