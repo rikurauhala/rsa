@@ -144,6 +144,8 @@ The project has the following file structure. Ignored or generated files and dir
 
 ```
 ├── documentation
+│   ├── misc
+│   │   ├── results.txt
 │   ├── reports
 │   │   ├── week1.md
 │   │   ├── ...
@@ -173,9 +175,9 @@ The project has the following file structure. Ignored or generated files and dir
 │   │   └── __init__.py
 │   ├── utils
 │   │   ├── __init__.py
+│   │   ├── characters.py
 │   │   ├── character_map.py
-│   │   ├── commands.py
-│   │   └── dictionary.py
+│   │   └── commands.py
 │   ├── app.py
 │   ├── console_io.py
 │   ├── index.py
