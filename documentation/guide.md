@@ -47,7 +47,7 @@ This section contains instructions on how to use the application. For the techni
 
 ### Key generation
 
-Keys can be generated with the command `1.` The application will indicate while keys are being generated and when it's done. This should not take too long, however. The keys are stored in the application memory and can be viewed with the commands `4` and `5`.
+Keys can be generated with the command `1`. The application will indicate while keys are being generated and when it's done. This should not take too long, however. The keys are stored in the application memory and can be viewed with the commands `4` and `5`.
 
 ### Encrypting a message
 
